@@ -1,0 +1,2008 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" charset="UTF-8"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" charset="UTF-8"/>
+  <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/0.9.3/hamburgers.css" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.1/jquery-migrate.js"></script>
+  <script src="https://www.theatlantic.com/static/atlanticads/js/inview/in-view.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
+  <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+
+
+  <style>
+
+  * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    /* border: 1px solid black; */
+  }
+
+  body {
+    width: 100%;
+  }
+
+  .stopScroll {
+    overflow:hidden;
+  }
+
+  /***************************************************************************************/
+  /***************************************************************************************/
+  /*
+  *      LANDING
+  */
+  /***************************************************************************************/
+  /***************************************************************************************/
+  .landing {
+    background-image: url("https://images.unsplash.com/photo-1509773896068-7fd415d91e2e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ac9f81b3be20ea13b1524b622b713476&auto=format&fit=crop&w=1650&q=80");
+    background-size: cover;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-attachment: fixed;
+    background-color: hsl(226, 38%, 22%);
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    color: white;
+    font-family: 'Julius Sans One', sans-serif;
+    overflow: hidden;
+  }
+
+  .landing__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  .landing__header__logo {
+    width: max-content;
+    font-size: 24px;
+    opacity: 0;
+  }
+
+  .landing__intro {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    left: 50%;
+    top: 39%;
+    transform: translateX(-50%);
+    text-align: center;
+    cursor: default;
+  }
+
+  .landing__intro h1 {
+    font-size: 60px;
+  }
+
+  .landing__intro h4 {
+    font-size: 28px;
+  }
+
+  .landing__intro__text {
+    margin-bottom: 9vw;
+  }
+
+  .landing__intro__relflection {
+    position: relative;
+    transform: rotate(180deg) scale(-1,1.5);
+    opacity: .2;
+    filter: blur(2px);
+    width: 100%;
+  }
+  /***************************************************************************************/
+  /***************************************************************************************/
+  /*
+  *      NAV BAR
+  */
+  /***************************************************************************************/
+  /***************************************************************************************/
+
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    z-index: 3;
+    transition: top 0.3s, background-color 0.3s;
+  }
+
+  .nav__menu {
+    position: absolute;
+    right: 20px;
+    width:400px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav__menu div {
+    width: min-content;
+  }
+
+  .nav__menu .active {
+    border-bottom: 1px solid white;
+  }
+
+  .nav__menu a {
+    color: white;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  .nav__menu div:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+
+  .menu-target {
+    display: block;
+    visibility: hidden;
+    height: 1px;
+  }
+
+  /***************************************************************************************/
+  /***************************************************************************************/
+  /*
+  *      MOBILE NAV BAR
+  */
+  /***************************************************************************************/
+  /***************************************************************************************/
+
+  .mobile__hamburger{
+    position: absolute;
+    display: none;
+    right: 0;
+    top: 0;
+  }
+
+  .content {
+    width: 100%;
+    height: max-content;
+    background-color: hsl(226, 38%, 22%);
+    overflow: hidden;
+  }
+
+  .content a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /***************************************************************************************/
+  /***************************************************************************************/
+  /*
+  *      ABOUT
+  */
+  /***************************************************************************************/
+  /***************************************************************************************/
+
+  .about {
+    position: relative;
+    left: -15vw;
+    width: 100%;
+    padding: 20px 50px;
+    background-color: hsl(226, 38%, 97%);
+    color: hsl(226, 38%, 22%);
+    transform: skewX(-10deg);
+    z-index: 2;
+  }
+
+  .about__header {
+    width: fit-content;
+    margin: 30px auto;
+    text-align: center;
+    font-size: 52px;
+    border-bottom: 3px solid hsl(226, 38%, 22%);
+    border-top: 3px solid hsl(226, 38%, 22%);
+    font-family: 'Julius Sans One', sans-serif;
+    transform: skewX(10deg);
+
+  }
+
+  .about__content {
+    margin-left: 19vw;
+    font-family: 'Crimson Text', serif;
+    transform: skewX(10deg);
+  }
+
+  .fortnite__easter-egg{
+    color: inherit;
+    text-decoration: none;
+    cursor: default;
+  }
+
+  .about__text {
+    width: 80%;
+    color: hsl(226, 38%, 22%);
+    font-size: 18px;
+    height: fit-content;
+  }
+
+  .about__text p {
+    margin-bottom: 20px;
+  }
+
+  /***************************************************************************************/
+  /***************************************************************************************/
+  /*
+  *      SERVICES
+  */
+  /***************************************************************************************/
+  /***************************************************************************************/
+
+  .services {
+    position: relative;
+    width: 100%;
+    background-image: url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3f6e5055d9ad1d603fd364c11823d026&auto=format&fit=crop&w=1652&q=80");
+    background-size: 135%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .services__header {
+    width: fit-content;
+    font-size: 52px;
+    font-family: 'Julius Sans One', sans-serif;
+    text-align: center;
+  }
+
+  .services__content {
+    width: 85%;
+    display: flex;
+    justify-content: space-between
+  }
+
+  .services__slide {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .services__diamond {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(45deg);
+    cursor: pointer;
+    transition: transform 500ms ease;
+  }
+
+  .services__diamond>img{
+    transform: rotate(-45deg);
+    transition-property: transform, margin-left, margin-top;
+    transition-duration: 500ms;
+    transition-timing-function: ease;
+    width: 80%;
+  }
+
+  .services__diamond.hover-on:hover {
+    transform: rotate(0deg) scale(1.1) !important;
+  }
+
+  .services__diamond.hover-on:hover >img {
+    transform: rotate(0deg) !important;
+    margin-left: unset !important;
+    margin-top: unset !important;
+  }
+
+  .services__academic {
+    background-color: hsl(226, 38%, 97%);
+
+  }
+
+  .services__professional {
+    background-color: hsl(226, 38%, 25%);
+  }
+
+  .services__academic__image {
+    margin-top: 2vw;
+    margin-left: 2vw;
+  }
+
+  .services__professional__image {
+  }
+
+  .services__slide__label {
+    font-size: 28px;
+    font-family: 'Julius Sans One', sans-serif;
+    margin-top: 7vw;
+  }
+
+
+  /***************************************************************************************/
+  /***************************************************************************************/
+  /*
+  *      MODAL
+  */
+  /***************************************************************************************/
+  /***************************************************************************************/
+  .modal {
+    display: none;
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Julius Sans One', sans-serif;
+    color: hsl(226, 38%, 22%);
+    flex-direction: column;
+  }
+  /*HEADER*/
+
+  .modal__header {
+    width: 85%;
+    margin: 30px auto 50px;
+    padding: 0px 10px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .modal__header h1 {
+    font-size: 52px;
+    width: min-content;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+  }
+
+  .modal__header__logo {
+    width: 10%;
+  }
+
+  .modal__header__logo img {
+    width: 100%;
+  }
+
+  .modal__header__close {
+    width: 3%;
+    transform: scale(1.0);
+    transition: transform 500ms ease;
+    cursor: pointer;
+  }
+
+  .modal__header__close img {
+    width: 100%;
+  }
+
+  .modal__header__close:hover{
+  transform: scale(1.05);
+  }
+
+  /* ACADEMIC */
+
+  .curriculm {
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .curriculm__header {
+    width: 100%;
+    padding: 10px;
+    font-size: 42px;
+    padding-left: 0px;
+  }
+
+  .curriculm__content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  /*CLASS TABS*/
+
+  .curriculm__content__classes {
+    width: 35%;
+    min-width: 310px;
+    margin-right: 60px;
+  }
+
+  .curriculm__section {
+    width: 100%;
+  }
+
+  .curriculm__section__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 28px;
+    line-height: 1.25;
+  }
+
+  .curriculm__section__classes {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .curriculm__class {
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+    transform: scale(1.0)skewX(-10deg);
+    background: linear-gradient(100deg,hsl(226, 38%, 25%) 50%, hsl(226, 38%, 30%) 50%);
+    background-size: 220%;
+    background-position: 100%;
+    color: white;
+    padding: 10px;
+    margin: 10px 0px;
+    cursor: pointer;
+    transition-property: background-position, transform;
+    transition-duration: 300ms;
+    transition-timing-function: ease-out;
+  }
+
+  .curriculm__section__classes .active {
+    background: unset;
+    background-color: hsl(226, 38%, 20%);
+    background-size: 100%;
+    background-position: 0%;
+  }
+
+  .curriculm__class > * {
+    transform: skewX(10deg);
+  }
+
+  .curriculm__class:hover {
+    background-position:0%;
+    transform: scale(1.03) skewX(-10deg);
+  }
+
+  /*CLASS DETAILS*/
+
+  .curriculm__content__details {
+    width: 55%;
+    height: 450px;
+    -webkit-mask-image: -webkit-gradient( linear, left top, left bottom, color-stop(0,transparent), color-stop(1%,transparent), color-stop(1%,#000), color-stop(27%,#000), color-stop(75%,#000), color-stop(100%,transparent) );
+    overflow: scroll;
+  }
+
+  .curriculm__details__class {
+    margin-bottom: 20px;
+  }
+
+  .curriculm__details__class h5 {
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+
+  .curriculm__details__class p {
+    font-family: 'Crimson Text', serif;
+    line-height: 1.2;
+    font-size: 16px;
+  }
+
+
+  /* PROFESSIONAL */
+
+   .professional .modal__header {
+     color: white;
+   }
+
+  .professional__content {
+    width: 100%;
+    height: 600px;
+  }
+
+  .professional__slider {
+    width: 80%;
+    height: 44.8vw;
+    background-color: hsl(226, 38%, 97%);
+    margin: 0 auto;
+  }
+
+  .professional__slide{
+    min-height: 100%;
+    width: 100%;
+    background-color: hsl(226, 38%, 27%);
+    overflow: hidden;
+  }
+
+  .professional__slide img {
+    width: 100%;
+  }
+
+
+  /***************************************************************************************/
+  /***************************************************************************************/
+  /*
+  *     CONTACT
+  */
+  /***************************************************************************************/
+  /***************************************************************************************/
+
+  .contact {
+    width: 100%;
+    height: 110vh;
+    background-image: url("https://images.unsplash.com/photo-1517976487492-5750f3195933?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5ab4ea4fd87e2144a8662bee0164010d&auto=format&fit=crop&w=1650&q=80");
+    /* background-image: url("https://images.unsplash.com/photo-1517976547714-720226b864c1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=079d92b0c69a30c1185678b154acd74a&auto=format&fit=crop&w=1650&q=80"); */
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    position: relative;
+    color: white;
+    font-family: 'Julius Sans One', sans-serif;
+  }
+
+  .contact--inner {
+    width: 90%;
+    height: 100vh;
+    margin: 5vh auto;
+  }
+
+  .contact__hello {
+    position: absolute;
+    left: 10%;
+    top: 15%;
+    width: min-content;
+    font-size: 62px;
+  }
+
+  .contact__greeting {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    /* transform: translateX(-50%); */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact__greeting__request {
+    display: block;
+    font-size: 52px;
+    width: max-content;
+  }
+
+  .contact__response {
+    height: 190px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .contact__response__list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact__response li {
+    min-width: 350px;
+  }
+
+  /*GENERAL EFFECTS*/
+  .contact__response__list__default {
+    display: block;
+    position: static;
+    transition: opacity 500ms ease;
+    transition-delay: 200ms;
+    opacity: 1;
+  }
+
+  .contact__response__list__option {
+    position: absolute;
+    line-height: 1.5;
+    font-size: 20px;
+    transform: scale(0);
+    transition: transform 500ms ease;
+  }
+
+  .contact__response__list--bracket {
+    display: block;
+    font-size: 60px;
+    width: 50px;
+    transition: font-size 300ms ease;
+    text-align: center;
+    cursor: default;
+  }
+
+  /* GENERAL HOVER EFFECTS */
+  .contact__response:hover .contact__response__list--bracket {
+    font-size: 180px;
+  }
+
+  .contact__response:hover .contact__response__list__default {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .contact__response:hover .contact__response__list__option {
+    position: static;
+    transform: scale(1.0);
+    cursor: pointer;
+  }
+
+  .contact__response__list__option:hover{
+    color: hsl(226, 38%, 22%);
+    font-size: 22px;
+  }
+
+  /*ON MOBILE DO THESE HOVERS*/
+  .contact__response.hover .contact__response__list--bracket{
+    font-size: 180px;
+  }
+  .contact__response.hover .contact__response__list__default{
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .contact__response.hover .contact__response__list__option{
+    position: static;
+    transform: scale(1.0);
+    cursor: pointer;
+  }
+
+
+
+
+
+
+
+
+  /***************************************************************************************/
+  /***************************************************************************************/
+  /*
+  *     CONTACT US WHEEL
+  */
+  /***************************************************************************************/
+  /***************************************************************************************/
+
+
+  .contact__me {
+    position: absolute;
+    right: 10%;
+    top: 25%;
+    display: none;
+    flex-direction: column;
+  }
+
+  .contact__me__header {
+    width: 100%;
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .contact__me__content {
+    display: flex;
+    /* flex-direction: row-reverse; */
+    justify-content: space-between;
+  }
+
+
+  .contact__me__info {
+    width: 50%;
+    min-width: 250px;
+    border: 1px solid white;
+  }
+
+
+
+  .contact__me__social {
+    width: 250px;
+    height: 250px;
+    position: relative;
+    border-radius: 50%;
+    margin: 40px auto;
+  }
+
+  .contact__me__social__icon {
+    width: 75px;
+    height: 75px;
+    background-color: hsl(226, 38%, 35%);
+    border-radius: 50%;
+    position: absolute;
+    transition: transform 500ms ease;
+    transform: scale(0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .contact__me__social__icon a{
+    display: inherit;
+  }
+
+  .contact__me__social__icon {
+    font-size: 50px;
+  }
+
+  .material-icons {
+    font-size: 50px;
+  }
+
+  .center {
+    z-index: 2;
+    cursor: pointer;
+    transform: scale(1.0);
+    width: 50px;
+    height: 50px;
+  }
+
+  .center .material-icons {
+    font-size: 30px;
+  }
+
+
+    /***************************************************************************************/
+    /***************************************************************************************/
+    /*
+    *     EMAIL FORM
+    */
+    /***************************************************************************************/
+    /***************************************************************************************/
+
+  .email {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 3;
+  }
+
+  .email__form {
+    position: relative;
+    margin: 150px auto;
+    width: 60%;
+    display: flex;
+    background-color: white;
+    color: hsl(226, 38%, 35%);
+    padding: 20px;
+    justify-content: space-between;
+  }
+
+  .email__form__close {
+    position: absolute;
+    width: 20px;
+    right: 3%;
+    top: 3%;
+    transition: transform 500ms ease;
+    transform: scale(1.0);
+    cursor: pointer;
+  }
+
+  .email__form__close:hover {
+    transform: scale(1.1);
+  }
+
+  .email__form__close img{
+    width: 100%;
+  }
+
+  .email__form__info {
+    width: 38%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .email__form__info__name {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .email__form__info__email {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+  }
+
+  .email__form__content{
+    width: 48%;
+  }
+
+  .email__form__name {
+    border: 1px solid hsl(226, 38%, 35%);
+    padding: 5px;
+  }
+
+  .email__form__email {
+    border: 1px solid hsl(226, 38%, 35%);
+    padding: 5px;
+  }
+
+  .email__form__message {
+    width: 95%;
+    height: 70%;
+    padding: 5px;
+    border: 1px solid hsl(226, 38%, 35%);
+  }
+
+  .email__form__submit {
+    background-color: hsl(226, 38%, 35%);
+    padding: 5px;
+    color: white;
+    cursor: pointer;
+  }
+
+  .footer {
+    width: 100%;
+    height: 300px;
+    background-color: hsl(226, 38%, 22%);
+  }
+
+    /***************************************************************************************/
+    /***************************************************************************************/
+    /*
+    *    MEDIA QUERYS
+    */
+    /***************************************************************************************/
+    /***************************************************************************************/
+
+  @media only screen and (max-width: 500px) {
+    .landing__intro__text {
+        margin-bottom: 80px;
+    }
+
+    .curriculm__content__classes {
+      min-width: 240px;
+    }
+    .curriculm__class__date {
+      display: none;
+    }
+  }
+  @media only screen and (max-width: 875px) {
+    .services {
+      background-attachment: scroll;
+    }
+
+    .contact__greeting__request {
+      color: black;
+    }
+  }
+
+  @media only screen and (max-width: 720px) {
+
+    .nav__logo {
+      display: none;
+    }
+
+    .nav__menu {
+      width: 85%;
+      right: 50%;
+      transform: translateX(50%);
+    }
+
+    .curriculm__content {
+      flex-direction: column;
+    }
+
+    .curriculm__content__classes {
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .curriculm__content__details{
+      width: 80%;
+      margin: 0 auto;
+      height: 300px;
+    }
+
+    .contact__greeting.mobile {
+      right: 5%;
+      left: unset;
+      align-items: center;
+    }
+  }
+
+  @media only screen and (max-width: 414px) {
+    .landing {
+      background-attachment: scroll;
+      background-position: 50% 50%;
+    }
+    .landing__intro {
+      top: 25%;
+    }
+
+    .landing__intro__relflection {
+      display: none;
+    }
+
+    .mobile__hamburger{
+      display: block;
+      float: right;
+    }
+
+    .nav__menu{
+      border: 1px solid black;
+      flex-direction: column;
+      justify-content: flex-start;
+      background-color: hsl(226, 38%, 15%);
+      width: 50%;
+      height: 100vh;
+      position: absolute;
+      left: -50%;
+      top: 0;
+      padding-top: 100px;
+      transition: left 500ms ease;
+      right: unset;
+      transform: unset;
+    }
+
+    .nav__menu__show{
+      left: 0%;
+    }
+
+    .nav__menu div{
+      margin: 10px auto;
+    }
+
+    .nav__menu>div>a{
+      font-size: 24px;
+    }
+
+    .about{
+      transform: skewX(0deg);
+      left: unset;
+      padding: unset;
+      padding-top: 10px;
+    }
+
+    .about__content{
+      transform: skewX(0deg);
+    }
+
+    .about__content {
+      width: 95%;
+      margin: 0 auto;
+    }
+
+    .about__text{
+      width: 100%;
+    }
+
+    .about__header{
+      transform: skewX(0deg);
+    }
+
+    .services {
+      justify-content: flex-start;
+    }
+
+    .services__header {
+      font-size: 24px;
+    }
+
+    .services__content {
+      margin-top: 50px;
+    }
+
+    .services__slide__label {
+      font-size: 18px;
+    }
+
+    .modal__header {
+      margin: 50px auto;
+    }
+
+    .modal__header h1 {
+      font-size: 36px;
+    }
+
+    .modal__header__logo{
+      width: 18%;
+    }
+
+    .professional .modal__header__logo{
+      width: 11%;
+    }
+
+    .modal__header__close {
+      width: 5%;
+    }
+
+    .curriculm__content__classes {
+      display: none;
+    }
+
+    .professional__content{
+      height: 470px;
+    }
+    .curriculm__content__details{
+      height: 470px;
+    }
+
+    .contact{
+      background-attachment: scroll;
+      background-position: 18% 50%;
+    }
+
+    .contact__hello{
+      left:20px;
+    }
+
+    .contact__greeting.mobile{
+      right: unset;
+      left: 20px;
+      align-items: flex-start;
+    }
+
+    .contact__response{
+      position: relative;
+      left: -30px;
+    }
+
+    .contact__response li{
+      min-width: 300px;
+    }
+
+    .contact__me{
+      top: 54%;
+      right: 17%;
+    }
+
+    .contact__me__header{
+      display: none;
+    }
+
+  }
+
+
+
+
+  </style>
+
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+</head>
+<body>
+<section class="landing">
+  <a class="menu-target" name="hometarget"></a>
+  <div class="landing__header">
+    <div class="landing__header__logo">
+      <h4>Ford Neild</h4>
+    </div>
+    <div class=landing__header__nav>
+
+    </div>
+  </div>
+  <div class="landing__intro">
+    <div class="landing__intro__text">
+      <h4>Meet Me</h4>
+      <h1>Ford Neild</h1>
+      <h4>Front End Developer</h4>
+    </div>
+    <div class="landing__intro__relflection">
+      <h4>Meet Me</h4>
+      <h1>Ford Neild</h1>
+      <h4>Front End Developer</h4>
+    </div>
+  </div>
+</section>
+<section class="nav">
+  <div class="nav__menu">
+    <div class="hometarget active"><a href="#hometarget">HOME</a></div>
+    <div class="abouttarget"><a href="#abouttarget">ABOUT</a></div>
+    <div class="servicestarget"><a href="#servicestarget">SERVICES</a></div>
+    <div class="experiencetarget"><a href="#experiencetarget">EXPERIENCE</a></div>
+    <div class="contacttarget"><a href="#contacttarget">CONTACT</a></div>
+    <div class="CVtarget"><a href="https://fordneild.github.io/Resume.pdf" target="_blank">CV</a></div>
+  </div>
+  <div class="mobile__hamburger">
+    <button class="hamburger hamburger--slider" type="button">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+  </div>
+</section>
+<section class="content">
+  <a class="menu-target" name="abouttarget"></a>
+  <section class="about darkNav">
+    <div class="about__header">
+      <h2>About</h2>
+    </div>
+    <div class="about__content">
+      <div class="about__text">
+        <p>Hi.<br> My name is Ford Neild. I am a sophomore at <a class="highlight" target="_blank" href="https://www.jhu.edu/">Johns Hopkins University</a> studying computer science. I am a talented front-end developer, just ask my Mom.</p>
+        <p> I focus on simple, elegant designs that convey content in a streamlined user-friendly experience. Coding is my passion and I often find myself getting lost in my work for hours. I enjoy working with similarly enthusatic and motivated people. I have experience in several languages including C, Java, HTML, CSS and my favorite, JavaScript.</p>
+        <p>I am a skilled Texas Hold'em player, a dedicated <a class="fortnite__easter-egg"  target="_blank" href="https://youtu.be/OhxhVgiLfK0">Fortnite</a> junkie and can sometimes peel my own hard-boiled egg.</p>
+        <p>Currently, I am working at Atlantic, Re:Think and living in Bronxville, New York.</p>
+      </div>
+    </div>
+  </section>
+  <section class="services darkNav">
+    <a class="menu-target" name="servicestarget"></a>
+    <div class="services__header">
+      <h2>What can I do?</h2>
+    </div>
+    <div class="services__content">
+      <div class="services__slide">
+        <!-- ACADEMIC -->
+        <div class="services__academic services__diamond hover-on">
+          <img class="services__academic__image" src="http://dms.wpshared.library.jhu.edu/wp-content/uploads/sites/27/2016/07/university.shield.large_.blue_.png" alt="hopkins-logo">
+          <section class="modal academic">
+            <!-- HEADER -->
+            <div class="modal__header">
+              <div class="modal__header__logo">
+                <img src="http://dms.wpshared.library.jhu.edu/wp-content/uploads/sites/27/2016/07/university.shield.large_.blue_.png" alt="modal-logo">
+              </div>
+              <h1>Academic</h1>
+              <div class="modal__header__close">
+                <img src="https://www.algonox.com/img/clear.png" alt="">
+              </div>
+            </div>
+            <!-- CONTENT -->
+            <div class="curriculm">
+              <div class="curriculm__content">
+                <!-- CLASS TABS -->
+                <div class="curriculm__content__classes">
+                  <div class="curriculm__section">
+                    <h4 class="curriculm__section__header">Johns Hopkins Univeristy</h4>
+                    <ul class="curriculm__section__classes">
+                      <li>
+                        <div class="curriculm__class active">
+                          <h5>Data Structures</h5>
+                          <h5 class="curriculm__class__date">Spring 2018</h5>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="curriculm__class">
+                          <h5>Intermediate Programming</h5>
+                          <h5 class="curriculm__class__date">Fall 2017</h5>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="curriculm__class">
+                          <h5>Multivariable Calculus</h5>
+                          <h5 class="curriculm__class__date">Fall 2017</h5>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="curriculm__section">
+                    <h4 class="curriculm__section__header">Bronxville High School</h4>
+                    <ul class="curriculm__section__classes">
+                      <li>
+                        <div class="curriculm__class">
+                          <h5>AP Computer Science</h5>
+                          <h5 class="curriculm__class__date">Fall 2016</h5>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+
+              </div>
+              <!-- DETAILS -->
+              <div class="curriculm__content__details">
+                <div class="curriculm__details__class" style="margin-top:10px;">
+                  <h5>Overview</h5>
+                  <p>Throughout my academic career, I have always been scientifically inclined and pushed myself to take the most rigorous classes available. After taking AP Computer Science junior year of high school, my focus has shifted from general sciences to computer sciences. At Johns Hopkins, I am working towards a double major in Computer Science and Applied Math and Science.
+                  </p>
+                </div>
+                <div class="curriculm__details__class">
+                  <a class="class-target" name="datastructurestarget"></a>
+                  <h5>Data Structures</h5>
+                  <p>Data Structures was my most recent, and favorite computer class I have taken. The class was taught in Java and build upon my basic C/C++ understanding of data storage. Each week we received a different data structure to build, test and benchmark. Click the links below to see my favorite projects. (In Progress)
+                  </p>
+                </div>
+                <div class="curriculm__details__class">
+                  <a class="class-target" name="intermediateprogrammingtarget"></a>
+                  <h5>Intermediate Programming</h5>
+                  <p>Intermediate Programming was my second coding class ever. It gave a general overview of C and C++ through the implementation of some basic data structures such as double-ended linked lists. We ended up building two more complicated data structures: the skip list and the multi-level hash. Click the projects below to see them (In Progress)
+                  </p>
+                </div>
+                <div class="curriculm__details__class">
+                  <a class="class-target" name="multivariablecalculustarget"></a>
+                  <h5>Multivariable Calculus</h5>
+                  <p>This class gave me many multivariable calculus tools that I have used throughout my coding career. The most enlightening, I feel, is an understanding of gradient decedent which plays a key role in machine learning.
+                  </p>
+                </div>
+                <div class="curriculm__details__class" style="margin-bottom:50px;">
+                  <a class="class-target" name="apcomputersciencetarget"></a>
+                  <h5>AP Computer Science</h5>
+                  <p>Though I held reservations about placing AP Computer Science among this list, this class sparked my interest in learning to code. I concluded the class by making a "Mutual Friend Finder" where I'll leave to the reader to interpret its use (EBDB).
+                  </p>
+                </div>
+
+                </div>
+              </div>
+            </div>
+
+          </section>
+        </div>
+        <h4 class="services__slide__label">Academic</h4>
+      </div>
+
+
+      <!-- PROFESSIONAL -->
+      <div class="services__slide">
+        <div class="services__professional services__diamond hover-on">
+          <img class="services__professional__image" src="https://cdn.theatlantic.com/assets/media/files/atl_transparent.png" alt="atlantic-logo">
+          <section class="modal professional">
+            <!-- HEADER -->
+            <div class="modal__header">
+              <div class="modal__header__logo">
+                <img src="https://cdn.theatlantic.com/assets/media/files/atl_transparent.png" alt="modal-logo">
+              </div>
+              <h1>Professional</h1>
+              <div class="modal__header__close">
+                <img src="https://www.algonox.com/img/clear.png" alt="">
+              </div>
+            </div>
+            <div class="professional__content">
+              <div class="professional__slider" data-slick='{"slidesToShow": 1, "slidesToScroll": 1}'>
+                <div class="professional__slide"><a href="https://fordneild.github.io/pbs.html"><img src="https://fordneild.github.io/assets/pbs_landing.png" alt =""/></a></div>
+                <div class="professional__slide"><a href="https://fordneild.github.io/forevermark.html"><img src="https://fordneild.github.io/assets/forevermark_landing.png" alt =""/></a></div>
+                <!-- <div class="professional__slide"><a href=""><img src="" alt =""/></a></div>
+                <div class="professional__slide"><a href=""><img src="" alt =""/></a></div> -->
+
+            </div>
+          </section>
+        </div>
+        <h4 class="services__slide__label">Professional</h4>
+      </div>
+    </div>
+
+  </section>
+  <a class="menu-target" name="experiencetarget"></a>
+
+  <!-- FAKE STUFF -->
+  <!-- <section class="footer">
+  </section> -->
+  <!-- END OF FAKE STUFF -->
+  <section class="contact">
+    <a class="menu-target" name="contacttarget"></a>
+    <div class="contact--inner">
+      <div data-aos="fade-up" data-aos-duration="500" class="contact__hello">
+        <h1> Hello Ford</h1>
+      </div>
+      <div class="contact__greeting mobile">
+        <div data-aos="fade-up" data-aos-duration="500" class="contact__greeting__request">
+          <h1>I need a:</h1>
+        </div>
+        <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="300" class="contact__response">
+          <span class="contact__response__list--bracket">[</span>
+          <ul class="contact__response__list">
+            <li class="contact__response__list__default">Service</li>
+            <li class="contact__response__list__option">Website Developer</li>
+            <li class="contact__response__list__option">Website Design Consultation</li>
+            <li class="contact__response__list__option">Versatile Coder</li>
+          </ul>
+          <span class="contact__response__list--bracket">]</span>
+        </div>
+      </div>
+      <div class="contact__me">
+        <h3 class="contact__me__header">Get in touch!</h3>
+          <div class="contact__me__social">
+              <div class="contact__me__social__icon center">
+                <i class="material-icons">person</i>
+              </div>
+              <div class="contact__me__social__icon">
+                <a href="https://www.facebook.com/ford.neild" target="_blank">
+                  <i class="fa fa-facebook-square"></i>
+                </a>
+              </div>
+              <div class="contact__me__social__icon">
+                <a href="https://github.com/fordneild/" target="_blank">
+                  <i class="fa fa-github"></i>
+                </a>
+              </div>
+              <div class="contact__me__social__icon">
+                <a href="https://www.linkedin.com/in/ford-neild" target="_blank">
+                  <i class="fa fa-linkedin-square"></i>
+                </a>
+              </div>
+              <div class="contact__me__social__icon">
+                <a href="http://open.spotify.com/user/fordneild" target="_blank">
+                  <i class="fa fa-spotify"></i>
+                </a>
+              </div>
+              <div class="contact__me__social__icon">
+                <a href="https://codepen.io/fordneild/" target="_blank">
+                  <i class="fa fa-codepen"></i>
+                </a>
+              </div>
+              <div class="contact__me__social__icon contact__me__email__icon">
+                  <i class="material-icons">email</i>
+              </div>
+          </div>
+      </div>
+      <div class="email">
+        <form class="email__form"name="input" method="POST" action="https://formspree.io/hanfordn35@gmail.com">
+          <div class="email__form__close">
+            <img src="https://www.algonox.com/img/clear.png" alt="close-button">
+          </div>
+          <div class="email__form__info">
+            <div class="email__form__info__name">
+              <p>Name: </p><input class="email__form__name"type="text" name="Name" autocomplete="name" placeholder="Your name">
+            </div>
+            <div class="email__form__info__email">
+              <p>Email: </p><input class="email__form__email"type="email" name="_replyto" autocomplete="name" placeholder="Your email">
+            </div>
+          </div>
+          <div class="email__form__content">
+            Message: <textarea class="email__form__message"name="message" placeholder="Type your message"></textarea>
+            <input class="email__form__submit"type="submit" value="Send">
+            <input type="hidden" name="_subject" value="Enter your subject here" />
+            <input type="hidden" name="_next" value="https://fordneild.github.io/#contacttarget" />
+        </div>
+        </form>
+    </div>
+  </section>
+  <!-- <form name="input" method="POST" action="https://formspree.io/hanfordn35@gmail.com">
+    Name: <input type="text" name="Name" placeholder="your name">
+    Email: <input type="email" name="_replyto" placeholder="Your email">
+    Message: <textarea name="message"placeholder="Type your message"></textarea>
+    <input type="submit" value="Send">
+    <input type="hidden" name="_subject" value="Enter your subject here" />
+    <input type="hidden" name="_next" value="https://fordneild.github.io" />
+  </form> -->
+  <!-- <section class="footer">
+  </section> -->
+</section>
+<script type="text/javascript">
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
+console.log("test");
+AOS.init();
+
+var windowWidth = $(window).width();
+function calculateWidth(){
+  windowWidth = $(window).width();
+}
+var lazyWindowWidth = _.debounce(calculateWidth,500);
+$(window).resize(lazyWindowWidth);
+
+function disableMobile(func){
+  if(windowWidth >=414){
+    func();
+  }
+}
+
+function scrollNotMobile(func){
+  $(window).scroll(function(){
+    disableMobile(func);
+  });
+}
+
+
+/***************************************************************************************/
+/***************************************************************************************/
+/*
+*      REFLECTION
+*/
+/***************************************************************************************/
+/***************************************************************************************/
+var initialTextY = $(".landing__intro__text").offset().top - $(document).scrollTop();
+var initialBlur = $(".landing__intro__relflection").css("filter");
+initialBlur = parseInt(initialBlur.slice(5,6),10);
+var currentTextY;
+var deltaTextY;
+var translation;
+var throttleReflection = _.throttle(function() {
+  if(inView.is(document.querySelector('.landing'))){
+    currentTextY = $(".landing__intro__text").offset().top - $(document).scrollTop();
+    deltaTextY=initialTextY-currentTextY;
+    if(deltaTextY > 0){
+      $(".landing__intro__relflection").css("top",deltaTextY*1.4);
+      $(".landing__intro__relflection").css("filter","blur(" + (initialBlur+(deltaTextY/42.5)) +"px)");
+    }
+  }
+},10);
+//
+// $(window).scroll(function(){
+//   disableMobile(throttleReflection);
+// });
+// $(window).scroll(throttleReflection);
+scrollNotMobile(throttleReflection);
+// $(window).scroll(disableMobile, throttleReflection);
+
+// $(window).scroll(throttleReflection,);
+
+/***************************************************************************************/
+/***************************************************************************************/
+/*
+*      NAV BAR
+*/
+/***************************************************************************************/
+/***************************************************************************************/
+// SHOW AND HIDE NAV BAR
+var initialScrollPos = window.pageYOffset;
+var currentScrollPos;
+var navHeight = $(".nav").height();
+var throttleNavToggling = _.throttle(function() {
+  currentScrollPos = window.pageYOffset;
+  if(currentScrollPos>initialScrollPos){
+    hideNav();
+  }else{
+    showNav();
+  }
+  initialScrollPos = currentScrollPos;
+},200);
+scrollNotMobile(throttleNavToggling);
+
+//CHANGE NAV BAR COLOR
+var divInView;
+var throttleNavColor = _.throttle(function(){
+  divInView = false;
+  $(".darkNav").each(function() {
+    if(atTop(this)){
+      divInView = true;
+    }
+  });
+  if(divInView){
+    $(".nav").css("background-color","hsl(226, 38%, 22%)");
+  }else{
+    $(".nav").css("background-color","transparent");
+  }
+},200);
+scrollNotMobile(throttleNavColor);
+function atTop(item){
+  $element = $(item);
+  if($element.offset().top-$(document).scrollTop() < $(".nav").height() && $element.offset().top-$(document).scrollTop() > -1 * $element.height()){
+    return true;
+  }else{
+    return false;
+  }
+}
+
+function showNav(){
+  $(".nav").css("top","0px");
+
+}
+
+function hideNav(){
+  $(".nav").css("top", "-"+navHeight+"px");
+}
+//ACTIVE SECTION SELECTION
+$(window).scroll(function() {
+  var active = $(activeSection()).attr("name");
+  $(".active").removeClass("active");
+  $("."+active).addClass("active");
+})
+//returns the <a> target that is active
+function activeSection(){
+  var active;
+  var smallestTargetDistanceDifference = $(document).height();
+  var currentTargetDistanceDifference;
+  //For each of the possible menu targets
+  $(".menu-target").each(function() {
+    currentTargetDistanceDifference = $(this).offset().top - $(document).scrollTop();
+    if(currentTargetDistanceDifference < 0){
+      //THIS ELEMENT HAS LEFT THE PAGE, WEIGHT IT TO SEEM FURTHER AWAY SINCE ITS LESS IMPORTANT
+      currentTargetDistanceDifference*=1.5;
+    }
+    currentTargetDistanceDifference = Math.abs(currentTargetDistanceDifference);
+    if(currentTargetDistanceDifference <= smallestTargetDistanceDifference){
+      smallestTargetDistanceDifference = currentTargetDistanceDifference;
+      active = this;
+    }
+  });
+  return active;
+}
+
+$(".hamburger").click(function(){
+  $(this).toggleClass("is-active");
+  $(".nav__menu").toggleClass("nav__menu__show");
+});
+
+/***************************************************************************************/
+/***************************************************************************************/
+/*
+*      SERVICES BACKGROUND
+*/
+/***************************************************************************************/
+/***************************************************************************************/
+var initialMouseX = 0;
+var initialMouseY = 0;
+var initialLeftOffset = 0;
+var initialTopOffset = 0;
+var deltaMouseX;
+var deltaMouseY;
+var leftOffset;
+var topOffset;
+
+//THESE VALUES ARE THE LENGTH OF OVERFLOW OF THE BG IMAGE AS A PERCENT OF SERVICES SIZE
+var backgroundSizeFactorX = 0.005*( parseFloat($(".services").css("background-size")) - 100);
+var backgroundSizeFactorY = backgroundSizeFactorX*.6654;
+
+//HOW RESPONSIVE THE IMAGE IS
+//THE HIGHER THE NUMBER, THE LESS RESPONSIVE IT IS
+//IF IT GETS TOO RESPONSE, THE BACKGROUND IMAGE MAY NOT COVER WHOLE AREA
+//INCREASE IN BACKGROUND-SIZE MAY BE NEEDED TO COMPENSATE
+var shrinkFactor = -20;
+
+
+setHeight();
+//THIS CENTERS THE IMAGE BASED ON HOW BIG IT IS
+calculateOffset();
+//WE MUST RECENTER IMAGE ON WINDOW RESIZE
+$(window).resize(function() {
+  if(!inModal){
+    makeSquare(".services__diamond");
+  }
+  setHeight();
+  calculateOffset();
+  recordIconPosition();
+});
+
+//BACKGROUND POSITION CHANGES ON MOUSE MOVE
+$(".services").mousemove(function(event){
+  //RECORD INITIAL POSITIONS
+  if(initialMouseX == 0 && initialMouseY == 0) {
+    initialMouseX = event.clientX;
+    initialMouseY = event.clientY;
+    initialLeftOffset = -1*$(".services").width()*backgroundSizeFactorX;
+    initialTopOffset = -1*$(".services").width()*backgroundSizeFactorY;
+  }
+  //THE EQUATION EXPLAINED
+  //             ((current pos   - inital pos)   /response)    +initial offsets   + units
+  deltaMouseX = (((event.clientX - initialMouseX)/shrinkFactor)+initialLeftOffset) +"px ";
+  deltaMouseY = (((event.clientY - initialMouseY)/shrinkFactor)+initialTopOffset) +"px";
+  //maybe looks better with just x direction movement?
+  // deltaMouseY = initialTopOffset +"px";
+  $(".services").css("background-position",deltaMouseX+deltaMouseY);
+});
+
+function setHeight() {
+  var height = $(".services").width()*.6654;
+  $(".services").css("height", height);
+}
+
+function calculateOffset() {
+  leftOffset = -1*$(".services").width()*backgroundSizeFactorX;
+  topOffset = -1*$(".services").width()*backgroundSizeFactorY;
+  $(".services").css("background-position",(leftOffset+"px "+topOffset+"px"));
+}
+
+function makeSquare(id){
+  $(id).css("width", $(window).width()*.2);
+  $(id).css("height", $(window).width()*.2);
+}
+makeSquare(".services__diamond");
+
+/***************************************************************************************/
+/***************************************************************************************/
+/*
+*      MODALS
+*/
+/***************************************************************************************/
+/***************************************************************************************/
+//EXPANDING DIAMONDS
+
+var inModal = false;
+var diamondData = {};
+
+
+$(".services__diamond").click(expandModal);
+
+function expandModal() {
+  if(!inModal){
+    //GET RID OF STUFF WE DONT NEED
+    $(".nav").hide();
+    $("body").addClass("stopScroll");
+    $(this).removeClass("hover-on");
+    //PREP DIAMOND FOR ANIMATION
+    var initialX = $(this).offset().left;
+    var initialY = $(this).offset().top - $(document).scrollTop();
+    $(this).css({
+      "transform":"scale(1.0) rotate(0deg)",
+      "z-index":"2",
+      "position":"fixed",
+      "left":initialX,
+      "top":initialY,
+      "cursor":"default"
+    });
+    //PREP IMAGE FOR ANIMATION
+    var img = $(this).children("img");
+    $(img).css({
+      "transform":"rotate(0deg)",
+      "margin-top":"unset",
+      "margin-left":"unset",
+      "width":"20%"
+    });
+    //ANIMATE EXPANSION
+    var modal = $(this).children(".modal");
+    $(this).animate({
+      height: "100vh",
+      width: "100vw",
+      top: "0",
+      left: "0"
+    },"slow",function() {
+      $(img).hide();
+      $(modal).fadeIn().css("display","flex");
+    });
+    //LOAD CONTENT
+    inModal = true;
+    diamondData["diamond"] = this;
+    diamondData["img"] = img;
+    diamondData["initialX"]= initialX;
+    diamondData["initialY"]= initialY;
+  }
+}
+
+
+//CONTRACTING DIAMONDS
+$(".modal__header__close").click(contract);
+
+function contract() {
+  if(inModal){
+    $(".modal").fadeOut();
+    $("body").removeClass("stopScroll");
+    $(".nav").fadeIn();
+    var diamond = diamondData["diamond"];
+    var img = diamondData["img"];
+    if($(img).hasClass("services__academic__image")){
+      $(img).css({
+        "margin-left": "2vw",
+        "margin-top": "2vw"
+      });
+    }
+    $(img).css({
+      "width": "80%",
+      "transform":"rotate(-45deg)"
+    });
+    $(diamond).css({
+      "transform":"scale(1.0) rotate(45deg)",
+      "cursor":"pointer"
+    });
+    $(diamond).animate({
+      "height": $(window).width()*.2,
+      "width": $(window).width()*.2,
+      "left": diamondData["initialX"],
+      "top": diamondData["initialY"],
+    },"slow",function() {
+      $(diamond).css({
+        "position":"relative",
+        "top":"unset",
+        "left":"unset",
+        "z-index":"1"
+      });
+      makeSquare(".services__diamond");
+      $(img).fadeIn();
+      setTimeout(function(){
+        $(diamond).addClass("hover-on");
+        inModal = false;
+      }, 500);
+    });
+  }
+}
+
+/***************************************************************************************/
+/***************************************************************************************/
+/*
+*      SLICK SLIDER
+*/
+/***************************************************************************************/
+/***************************************************************************************/
+
+$(".professional__slider").slick({
+  autoplay: false,
+  dots: true,
+  speed: 500
+});
+
+/***************************************************************************************/
+/***************************************************************************************/
+/*
+*      CONTACT US
+*/
+/***************************************************************************************/
+/***************************************************************************************/
+//OPTIONS NEED TO BE OPENED ON MOBILE SINCE THEY CANT BE VIA HOVER EFFECTS
+$(".contact__response").click(function(){
+  if(windowWidth >= 414){
+    $(this).addClass("hover");
+  }
+})
+
+//SELECT A RESPONSE
+$(".contact__response__list__option").click(function() {
+  //HIDE EVERYTHING ELSE
+  $(".contact__response__list__default").hide();
+  $(".contact__response__list--bracket").css("visibility","hidden");
+  var $option = $(this);
+  $(".contact__response__list__default").hide();
+  $(".contact__response__list__option").each(function(index){
+    if($(this)[0] != $option[0]) {
+      $(this).fadeOut();
+    }
+  });
+  //ANIMATE OUR TEXT
+  $option.removeClass("contact__response__list__option");
+  $option.css("color","black");
+  $option.animate({
+     "font-weight":"600",
+     "font-size":"26px"
+  },"slow")
+  //MOVE IT
+  $(".contact__response").animate({
+      "height":"70px",
+      "right":"46px"
+  },"slow");
+
+  if(windowWidth>=414){
+    $(".contact__greeting").removeClass("mobile"); //remove media queries
+    $(".contact__response").css("position","relative")
+    $(".contact__greeting").animate({
+      "left":"10%"
+    },"slow",function() {
+      //SHOW SOCIAL MEDIA STUFF
+      $(".contact__me").show();
+    });
+  }else{
+    $(".contact__me").fadeIn(1000);
+  }
+
+});
+
+/***************************************************************************************/
+/***************************************************************************************/
+/*
+*      CONTACT US WHEEL
+*/
+/***************************************************************************************/
+/***************************************************************************************/
+
+var hoverFactor = 1;
+var radius = ($(".contact__me__social").width()/2)*hoverFactor;
+var iconOffset = $(".contact__me__social__icon").width()/2;
+var expanded = false;
+
+var icons = loadIcons(".contact__me__social__icon");
+centerDefault();
+centerIcons();
+
+
+var throttleSocialWheel = _.throttle(function(){
+  if(!expanded){
+    $(this).css("background-color","hsl(226, 38%, 22%)");
+    expandIcons();
+  }else{
+    $(this).css("background-color","hsl(226, 38%, 35%)");
+    collapse();
+  }
+},500);
+
+$(".center").click(throttleSocialWheel);
+
+var recorded = false;
+$(".contact__me__social").mousemove(function() {
+  if(expanded && windowWidth >= 414){
+    if(!recorded){
+      recordIconPosition();
+      recorded=true;
+    }
+    calculateDistance();
+    for(var i = 0; i<icons.length;i++){
+      resizeIcon(icons[i]);
+    }
+  }
+});
+
+$(".contact__me__social").mouseleave(function() {
+  // if(expanded){
+  //   $(".center").trigger("click");
+  // }
+});
+
+
+function loadIcons(childSelector) {
+  var items = [];
+  $child = $(childSelector);
+  $child.each(function(index) {
+      if(!$(this).hasClass("center")){
+        icon = {
+          "icon":this,
+        }
+        items.push(icon);
+      }
+  });
+  return items;
+}
+
+function calculateDegrees(){
+  var totalDeg = 360;
+  var currDeg = 0;
+  for(var i = 0; i<icons.length; i++) {
+    icons[i]["degree"] = currDeg;
+    currDeg = currDeg + (totalDeg/icons.length);
+  }
+}
+
+function calculateDistance() {
+  for(var i = 0; i<icons.length;i++){
+    var icon = icons[i];
+    icon["distance"] = Math.floor(Math.sqrt(Math.pow(event.clientX - (icon["left"] + (iconOffset)), 2) + Math.pow((event.clientY + $(window).scrollTop() - (icon["top"]+ iconOffset)), 2)));
+  }
+}
+
+function resizeIcon(icon) {
+  var maxDistance = radius*2;
+  var sizeFactor = 1.5 - icon["distance"]/maxDistance;
+  $(icon["icon"]).css("transform","scale("+sizeFactor+")");
+}
+
+function expandIcons() {
+  var icon;
+  calculatePosition();
+  for(var i = 0; i< icons.length; i++) {
+    icon = icons[i];
+    transitionIcon(icon);
+    growIcon(icon);
+  }
+  expanded = true;
+  recorded = false;
+}
+
+function recordIconPosition() {
+  for(var i = 0; i< icons.length; i++) {
+    icon = icons[i];
+    icon["left"] = $(icon["icon"]).offset().left;
+    icon["top"] = $(icon["icon"]).offset().top;
+  }
+}
+
+function collapse() {
+  var icon;
+  for(var i = 0; i< icons.length; i++) {
+    icon = icons[i];
+    icon["x"]= compensateCenter(alignIcon(0));
+    icon["y"]= compensateCenter(alignIcon(0));
+    transitionIcon(icon);
+    shrinkIcon(icon);
+  }
+  expanded = false;
+}
+
+function calculatePosition() {
+  var icon;
+  var x;
+  var y;
+  var radians;
+  calculateDegrees();
+  for(var i = 0; i< icons.length; i++) {
+    icon = icons[i];
+    radians = icon["degree"]*0.0174533;
+    x = Math.round((Math.cos(radians) * radius));
+    y = Math.round((Math.sin(radians) * radius));
+    positionIcon(icon,x,y);
+  }
+}
+
+function centerIcons() {
+  for(var i = 0; i< icons.length; i++) {
+    moveIcon(icons[i],radius,radius);
+  }
+}
+
+function alignIcon(cord){
+  return cord-iconOffset;
+}
+
+function compensateCenter(cord){
+  return cord+radius;
+}
+
+//PASS TRADITION X Y CORDINATES WITH THE CENTER OF CIRCLE AS THE ORIGIN
+function positionIcon(icon,xcord,ycord) {
+  var x = compensateCenter(xcord);
+  var y = compensateCenter(ycord);
+
+  x = alignIcon(x);
+  y = alignIcon(y);
+
+  icon["x"] = x;
+  icon["y"] = y;
+}
+
+function moveIcon(icon,x,y){
+  $(icon["icon"]).css("top",alignIcon(y));
+  $(icon["icon"]).css("left",alignIcon(x));
+}
+
+function transitionIcon(icon) {
+  $(icon["icon"]).animate({
+    "left":icon["x"],
+    "top":icon["y"]
+  },500,function(){
+  });
+}
+
+function centerDefault() {
+  $(".center").css("top",compensateCenter(alignIcon(0)));
+  $(".center").css("left",compensateCenter(alignIcon(0)));
+}
+
+function growIcon(icon){
+  $(icon["icon"]).css("transform","scale(1.0)");
+  $(icon["icon"]).css("transition-duration","100ms");
+}
+
+function shrinkIcon(icon){
+  $(icon["icon"]).css("transition-duration","500ms");
+  $(icon["icon"]).css("transform","scale(0)");
+}
+
+
+
+/***************************************************************************************/
+/***************************************************************************************/
+/*
+*      EMAIL
+*/
+/***************************************************************************************/
+/***************************************************************************************/
+
+$(".contact__me__email__icon").click(openEmailForm);
+
+function openEmailForm() {
+  $(".nav").hide();
+  $("body").addClass("stopScroll");
+  console.log("open");
+  $(".email").fadeIn();
+}
+
+function closeEmailForm() {
+  $(".nav").show();
+  $("body").removeClass("stopScroll");
+  console.log("close");
+  $(".email").fadeOut();
+}
+
+$(".email__form__close").click(closeEmailForm);
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
