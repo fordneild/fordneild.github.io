@@ -1,0 +1,107 @@
+/***************************************************************************************/
+/***************************************************************************************/
+/*
+*      NAV BAR
+*/
+/***************************************************************************************/
+/***************************************************************************************/
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  z-index: 3;
+  transition: top 0.3s, background-color 0.3s;
+}
+
+.nav__menu {
+  position: absolute;
+  right: 20px;
+  width:400px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__menu div {
+  width: min-content;
+}
+
+.nav__menu .active {
+  border-bottom: 1px solid white;
+}
+
+.nav__menu a {
+  color: white;
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.nav__menu div:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.menu-target {
+  display: block;
+  visibility: hidden;
+  height: 1px;
+}
+
+/***************************************************************************************/
+/***************************************************************************************/
+/*
+*      MOBILE NAV BAR
+*/
+/***************************************************************************************/
+/***************************************************************************************/
+
+.mobile__hamburger{
+  position: absolute;
+  display: none;
+  right: 0;
+  top: 0;
+}
+
+
+@media only screen and (max-width: 414px) {
+
+  .mobile__hamburger{
+    display: block;
+    float: right;
+  }
+
+  .nav__menu{
+    border: 1px solid black;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: hsl(226, 38%, 15%);
+    width: 50%;
+    height: 100vh;
+    position: absolute;
+    left: -50%;
+    top: 0;
+    padding-top: 100px;
+    transition: left 500ms ease;
+    right: unset;
+    transform: unset;
+  }
+
+  .nav__menu__show{
+    left: 0%;
+  }
+
+  .nav__menu div{
+    margin: 10px auto;
+  }
+
+  .nav__menu>div>a{
+    font-size: 24px;
+  }
+}

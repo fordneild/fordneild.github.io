@@ -1,0 +1,379 @@
+/***************************************************************************************/
+/***************************************************************************************/
+/*
+*     CONTACT
+*/
+/***************************************************************************************/
+/***************************************************************************************/
+
+.contact {
+  width: 100%;
+  height: 110vh;
+  background-image: url("https://images.unsplash.com/photo-1517976487492-5750f3195933?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5ab4ea4fd87e2144a8662bee0164010d&auto=format&fit=crop&w=1650&q=80");
+  /* background-image: url("https://images.unsplash.com/photo-1517976547714-720226b864c1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=079d92b0c69a30c1185678b154acd74a&auto=format&fit=crop&w=1650&q=80"); */
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+  position: relative;
+  color: white;
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+.contact--inner {
+  width: 90%;
+  height: 100vh;
+  margin: 5vh auto;
+}
+
+.contact__hello {
+  position: absolute;
+  left: 10%;
+  top: 15%;
+  width: min-content;
+  font-size: 62px;
+}
+
+.contact__greeting {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  /* transform: translateX(-50%); */
+  display: flex;
+  flex-direction: column;
+}
+
+.contact__greeting__request {
+  display: block;
+  font-size: 52px;
+  width: max-content;
+}
+
+.contact__response {
+  height: 190px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact__response__list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.contact__response li {
+  min-width: 350px;
+}
+
+/*GENERAL EFFECTS*/
+.contact__response__list__default {
+  display: block;
+  position: static;
+  transition: opacity 500ms ease;
+  transition-delay: 200ms;
+  opacity: 1;
+}
+
+.contact__response__list__option {
+  position: absolute;
+  line-height: 1.5;
+  font-size: 20px;
+  transform: scale(0);
+  transition: transform 500ms ease;
+}
+
+.contact__response__list--bracket {
+  display: block;
+  font-size: 60px;
+  width: 50px;
+  transition: font-size 300ms ease;
+  text-align: center;
+  cursor: default;
+}
+
+/* GENERAL HOVER EFFECTS */
+.contact__response:hover .contact__response__list--bracket {
+  font-size: 180px;
+}
+
+.contact__response:hover .contact__response__list__default {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.contact__response:hover .contact__response__list__option {
+  position: static;
+  transform: scale(1.0);
+  cursor: pointer;
+}
+
+.contact__response__list__option:hover{
+  color: hsl(226, 38%, 22%);
+  font-size: 22px;
+}
+
+/*ON MOBILE DO THESE HOVERS*/
+.contact__response.hover .contact__response__list--bracket{
+  font-size: 180px;
+}
+.contact__response.hover .contact__response__list__default{
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.contact__response.hover .contact__response__list__option{
+  position: static;
+  transform: scale(1.0);
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+/***************************************************************************************/
+/***************************************************************************************/
+/*
+*     CONTACT US WHEEL
+*/
+/***************************************************************************************/
+/***************************************************************************************/
+
+
+.contact__me {
+  position: absolute;
+  right: 10%;
+  top: 25%;
+  display: none;
+  flex-direction: column;
+}
+
+.contact__me__header {
+  width: 100%;
+  font-size: 32px;
+  text-align: center;
+}
+
+.contact__me__content {
+  display: flex;
+  /* flex-direction: row-reverse; */
+  justify-content: space-between;
+}
+
+
+.contact__me__info {
+  width: 50%;
+  min-width: 250px;
+  border: 1px solid white;
+}
+
+
+
+.contact__me__social {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  border-radius: 50%;
+  margin: 40px auto;
+}
+
+.contact__me__social__icon {
+  width: 75px;
+  height: 75px;
+  background-color: hsl(226, 38%, 35%);
+  border-radius: 50%;
+  position: absolute;
+  transition: transform 500ms ease;
+  transform: scale(0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.contact__me__social__icon a{
+  display: inherit;
+}
+
+.contact__me__social__icon {
+  font-size: 50px;
+}
+
+.material-icons {
+  font-size: 50px;
+}
+
+.center {
+  z-index: 2;
+  cursor: pointer;
+  transform: scale(1.0);
+  width: 50px;
+  height: 50px;
+}
+
+.center .material-icons {
+  font-size: 30px;
+}
+
+
+  /***************************************************************************************/
+  /***************************************************************************************/
+  /*
+  *     EMAIL FORM
+  */
+  /***************************************************************************************/
+  /***************************************************************************************/
+
+.email {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 3;
+}
+
+.email__form {
+  position: relative;
+  margin: 150px auto;
+  width: 60%;
+  display: flex;
+  background-color: white;
+  color: hsl(226, 38%, 35%);
+  padding: 20px;
+  justify-content: space-between;
+}
+
+.email__form__close {
+  position: absolute;
+  width: 20px;
+  right: 3%;
+  top: 3%;
+  transition: transform 500ms ease;
+  transform: scale(1.0);
+  cursor: pointer;
+}
+
+.email__form__close:hover {
+  transform: scale(1.1);
+}
+
+.email__form__close img{
+  width: 100%;
+}
+
+.email__form__info {
+  width: 38%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.email__form__info__name {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.email__form__info__email {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.email__form__content{
+  width: 48%;
+}
+
+.email__form__name {
+  border: 1px solid hsl(226, 38%, 35%);
+  padding: 5px;
+}
+
+.email__form__email {
+  border: 1px solid hsl(226, 38%, 35%);
+  padding: 5px;
+}
+
+.email__form__message {
+  width: 95%;
+  height: 70%;
+  padding: 5px;
+  border: 1px solid hsl(226, 38%, 35%);
+}
+
+.email__form__submit {
+  background-color: hsl(226, 38%, 35%);
+  padding: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.footer {
+  width: 100%;
+  height: 300px;
+  background-color: hsl(226, 38%, 22%);
+}
+
+
+@media only screen and (max-width: 875px) {
+
+  .contact__greeting__request {
+    color: black;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+
+  .contact{
+    background-attachment: scroll;
+    background-position: 18% 50%;
+  }
+
+  .contact__hello{
+    left:20px;
+  }
+
+  .contact__greeting.mobile{
+    right: unset;
+    left: 20px;
+    align-items: flex-start;
+  }
+
+  .contact__response{
+    position: relative;
+    left: -30px;
+  }
+
+  .contact__response li{
+    min-width: 300px;
+  }
+
+  .contact__me{
+    top: 54%;
+    right: 17%;
+  }
+
+  .contact__me__header{
+    display: none;
+  }
+
+}
