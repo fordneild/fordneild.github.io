@@ -1,0 +1,236 @@
+/***************************************************************************************/
+/***************************************************************************************/
+/*
+*      MODAL
+*/
+/***************************************************************************************/
+/***************************************************************************************/
+.modal {
+  display: none;
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Julius Sans One', sans-serif;
+  color: hsl(226, 38%, 22%);
+  flex-direction: column;
+}
+/*HEADER*/
+
+.modal__header {
+  width: 85%;
+  margin: 30px auto 50px;
+  padding: 0px 10px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal__header h1 {
+  font-size: 52px;
+  width: min-content;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+}
+
+.modal__header__logo {
+  width: 10%;
+}
+
+.modal__header__logo img {
+  width: 100%;
+}
+
+.modal__header__close {
+  width: 3%;
+  transform: scale(1.0);
+  transition: transform 500ms ease;
+  cursor: pointer;
+}
+
+.modal__header__close img {
+  width: 100%;
+}
+
+.modal__header__close:hover{
+transform: scale(1.05);
+}
+
+/* ACADEMIC */
+
+.curriculm {
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.curriculm__header {
+  width: 100%;
+  padding: 10px;
+  font-size: 42px;
+  padding-left: 0px;
+}
+
+.curriculm__content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+/*CLASS TABS*/
+
+.curriculm__content__classes {
+  width: 35%;
+  min-width: 310px;
+  margin-right: 60px;
+}
+
+.curriculm__section {
+  width: 100%;
+}
+
+.curriculm__section__header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 28px;
+  line-height: 1.25;
+}
+
+.curriculm__section__classes {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.curriculm__class {
+  width: 100%;
+  display:flex;
+  justify-content: space-between;
+  transform: scale(1.0)skewX(-10deg);
+  background: linear-gradient(100deg,hsl(226, 38%, 25%) 50%, hsl(226, 38%, 30%) 50%);
+  background-size: 220%;
+  background-position: 100%;
+  color: white;
+  padding: 10px;
+  margin: 10px 0px;
+  cursor: pointer;
+  transition-property: background-position, transform;
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+}
+
+.curriculm__section__classes .active {
+  background: unset;
+  background-color: hsl(226, 38%, 20%);
+  background-size: 100%;
+  background-position: 0%;
+}
+
+.curriculm__class > * {
+  transform: skewX(10deg);
+}
+
+.curriculm__class:hover {
+  background-position:0%;
+  transform: scale(1.03) skewX(-10deg);
+}
+
+/*CLASS DETAILS*/
+
+.curriculm__content__details {
+  width: 55%;
+  height: 450px;
+  -webkit-mask-image: -webkit-gradient( linear, left top, left bottom, color-stop(0,transparent), color-stop(1%,transparent), color-stop(1%,#000), color-stop(27%,#000), color-stop(75%,#000), color-stop(100%,transparent) );
+  overflow: scroll;
+}
+
+.curriculm__details__class {
+  margin-bottom: 20px;
+}
+
+.curriculm__details__class h5 {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.curriculm__details__class p {
+  font-family: 'Crimson Text', serif;
+  line-height: 1.2;
+  font-size: 16px;
+}
+
+
+/* PROFESSIONAL */
+
+ .professional .modal__header {
+   color: white;
+ }
+
+.professional__content {
+  width: 100%;
+  height: 600px;
+}
+
+.professional__slider {
+  width: 80%;
+  height: 44.8vw;
+  background-color: hsl(226, 38%, 97%);
+  margin: 0 auto;
+}
+
+.professional__slide{
+  min-height: 100%;
+  width: 100%;
+  background-color: hsl(226, 38%, 27%);
+  overflow: hidden;
+}
+
+.professional__slide img {
+  width: 100%;
+}
+
+@media only screen and (max-width: 720px) {
+
+  .modal__header {
+    margin: 50px auto;
+  }
+
+  .modal__header h1 {
+    font-size: 36px;
+  }
+
+  .modal__header__logo{
+    width: 18%;
+  }
+
+  .professional .modal__header__logo{
+    width: 11%;
+  }
+
+  .modal__header__close {
+    width: 5%;
+  }
+
+  .curriculm__content__classes {
+    display: none;
+  }
+
+  .professional__content{
+    height: 470px;
+  }
+  .curriculm__content__details{
+    height: 470px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+
+  .curriculm__content__classes {
+    min-width: 240px;
+  }
+  .curriculm__class__date {
+    display: none;
+  }
+}

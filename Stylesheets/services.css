@@ -1,0 +1,120 @@
+/***************************************************************************************/
+/***************************************************************************************/
+/*
+*      SERVICES
+*/
+/***************************************************************************************/
+/***************************************************************************************/
+
+.services {
+  position: relative;
+  width: 100%;
+  background-image: url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3f6e5055d9ad1d603fd364c11823d026&auto=format&fit=crop&w=1652&q=80");
+  background-size: 135%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: white;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.services__header {
+  width: fit-content;
+  font-size: 52px;
+  font-family: 'Julius Sans One', sans-serif;
+  text-align: center;
+}
+
+.services__content {
+  width: 85%;
+  display: flex;
+  justify-content: space-between
+}
+
+.services__slide {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.services__diamond {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(45deg);
+  cursor: pointer;
+  transition: transform 500ms ease;
+}
+
+.services__diamond>img{
+  transform: rotate(-45deg);
+  transition-property: transform, margin-left, margin-top;
+  transition-duration: 500ms;
+  transition-timing-function: ease;
+  width: 80%;
+}
+
+.services__diamond.hover-on:hover {
+  transform: rotate(0deg) scale(1.1) !important;
+}
+
+.services__diamond.hover-on:hover >img {
+  transform: rotate(0deg) !important;
+  margin-left: unset !important;
+  margin-top: unset !important;
+}
+
+.services__academic {
+  background-color: hsl(226, 38%, 97%);
+
+}
+
+.services__professional {
+  background-color: hsl(226, 38%, 25%);
+}
+
+.services__academic__image {
+  margin-top: 2vw;
+  margin-left: 2vw;
+}
+
+.services__professional__image {
+}
+
+.services__slide__label {
+  font-size: 28px;
+  font-family: 'Julius Sans One', sans-serif;
+  margin-top: 7vw;
+}
+
+
+@media only screen and (max-width: 875px) {
+  .services {
+    background-attachment: scroll;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+
+  .services {
+    justify-content: flex-start;
+  }
+
+  .services__header {
+    font-size: 24px;
+  }
+
+  .services__content {
+    margin-top: 50px;
+  }
+
+  .services__slide__label {
+    font-size: 18px;
+  }
+}
